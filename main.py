@@ -64,7 +64,7 @@ def photo_of_define_day(year, month, day):
         return redirect(url_for('photo_of_the_day'))
 
     elif r.get(date):
-        print('Рботает кеш редиса')
+        print('Рaботает кеш редиса')
         return jsonify(json.loads(r.get(date)))
 
     else:

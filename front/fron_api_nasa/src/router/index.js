@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import PhotoDayView from '../views/PhotoDayView.vue'
 import FindPhotoView from '../views/FindPhotoView.vue'
 import ArchiveView from '../views/ArchiveView.vue'
+import PhotoView from '../views/PhotoView.vue'
 
 
 const router = createRouter({
@@ -26,6 +27,12 @@ const router = createRouter({
       path: '/archive',
       name: 'archive',
       component: ArchiveView
+    },
+
+    {
+      path:'/photo/:year-:month-:day',
+      name: 'photo',
+      component: PhotoView
     }
   ]
 })
