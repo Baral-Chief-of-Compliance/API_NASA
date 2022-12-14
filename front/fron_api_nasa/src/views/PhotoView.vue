@@ -56,7 +56,7 @@ export default{
         color: white;
         margin-left: 17%;
         padding-top: 50px;
-        }
+    }
 
     .title{
         font-size: 30px;

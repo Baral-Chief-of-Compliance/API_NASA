@@ -29,10 +29,15 @@ CORS(app)
 def photo_of_the_day():
 
     today = f"{datetime.datetime.now():%Y-%m-%d}"
+    yesterday = f"{datetime.datetime.now() - datetime.timedelta(days=1):%Y-%m-%d}"
 
     if r.get(today):
         print('Рботает кеш редиса')
         return jsonify(json.loads(r.get(today)))
+
+    elif r.get(yesterday):
+        print('Рботает кеш редиса, но данных на сегодня пока нет')
+        return jsonify(json.loads(r.get(yesterday)))
 
     else:
 
@@ -53,7 +58,7 @@ def photo_of_the_day():
         return jsonify(inf)
 
 
-@app.route('/archiv_nasa/api/v1.0/photo_of_define_day/<int:year>-<int:month>-<int:day>', methods = ['GET'])
+@app.route('/archiv_nasa/api/v1.0/photo_of_define_day/<string:year>-<string:month>-<string:day>', methods = ['GET'])
 def photo_of_define_day(year, month, day):
 
     date = f"{year}-{month}-{day}"
