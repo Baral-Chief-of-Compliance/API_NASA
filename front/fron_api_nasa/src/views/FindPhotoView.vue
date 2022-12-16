@@ -85,6 +85,25 @@ export default{
     }
 
     button{
-        background-color: white;
+        background-color: black;
+        color: white;
+        margin-left: 25px;
+        font-size: 20px;
+    }
+
+    button:hover{
+        color: #0000ff;
+        cursor: pointer;
+    }
+
+    input{
+        border: 1px solid white;
+        padding: 10px;
+        margin-left: 60px;
+    }
+
+    input:hover{
+        border: 1px solid #0000ff;
+        cursor: pointer;
     }
 </style>
